@@ -17,7 +17,7 @@ namespace WebDriverManager.Helpers
         public static string GetBinDestination(string driverName, string version, Architecture architecture,
             string binName)
         {
-            var currentDirectory = Directory.GetCurrentDirectory();
+            var currentDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             return Path.Combine(currentDirectory, driverName, version, architecture.ToString(), binName);
         }
 
